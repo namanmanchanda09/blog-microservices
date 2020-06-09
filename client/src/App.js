@@ -1,5 +1,6 @@
 import React from 'react';
 import PostCreate from './PostCreate'
+import PostList from './PostList'
 
 class App extends React.Component{
     render() {
@@ -7,6 +8,9 @@ class App extends React.Component{
             <div className="container">
                 <h1>Create Post</h1>
                 <PostCreate />
+                <hr />
+                <h1>Posts</h1>
+                <PostList />
             </div>
 
         )
@@ -14,6 +18,8 @@ class App extends React.Component{
 }
 
 export default App;
+
+
 
 
 
