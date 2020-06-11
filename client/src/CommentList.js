@@ -4,7 +4,17 @@ import React from 'react'
 export default ({comments})=>{
 
     const renderedComments = comments.map(comment => {
-        return <li key={comment.id}> {comment.content} </li>
+        let content;
+        if(comment.status==='approved'){
+            content = comment.content;
+        }
+        if(comment.status === 'pending'){
+            content = 'This comment is awaiting moderation';
+        }
+        if(comment.status === 'rejected'){
+            content = 'The comment has been rejected';
+        }
+        return <li key={comment.id}> {content} </li>
     });
 
     return (
@@ -14,6 +24,7 @@ export default ({comments})=>{
     );
 
 }
+
 
 
 
